@@ -1,0 +1,9 @@
+name: Test environment values flow with a push
+on:
+  push:
+
+jobs:
+  test:
+    uses: lsipii/test/.github/workflows/test.yml@main
+    with:
+      environment: dev
