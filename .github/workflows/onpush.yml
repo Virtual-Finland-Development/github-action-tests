@@ -3,7 +3,11 @@ on:
   push:
 
 jobs:
-  test:
+  test-dev:
     uses: lsipii/test/.github/workflows/test.yml@main
     with:
       environment: dev
+  test-staging:
+    uses: lsipii/test/.github/workflows/test.yml@main
+    with:
+      environment: staging

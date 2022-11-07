@@ -7,10 +7,8 @@ on:
         type: environment
         required: true
   workflow_call:
-    inputs:
-      environment:
-        required: false
-        type: string
+    secrets: inherit
+
 jobs:
   build-and-test:
     name: Build and test
