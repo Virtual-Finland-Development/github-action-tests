@@ -1,0 +1,23 @@
+name: Test environment values flow on github actions
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Environment where to deploy the stack (dev, staging)
+        type: environment
+        required: true
+        options:
+          - staging
+          - dev
+
+jobs:
+  build-and-test:
+    name: Build and test
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - name: Environment test
+        run: |
+          echo ${{ secrets.BAZ }} | base64 > secret.der
+          cat secret.der
+          cat secret.der | base64 --decode
