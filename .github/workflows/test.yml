@@ -17,7 +17,6 @@ jobs:
     environment: ${{ inputs.environment }}
     steps:
       - name: Environment test
-        run: |
-          echo ${{ secrets.BAZ }} | base64 > secret.der
-          cat secret.der
-          cat secret.der | base64 --decode
+        run: ./test.sh
+        env:
+          BAZ: ${{ secrets.BAZ }}
