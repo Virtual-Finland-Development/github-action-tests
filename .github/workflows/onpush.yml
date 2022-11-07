@@ -6,10 +6,10 @@ jobs:
   test-dev:
     uses: lsipii/test/.github/workflows/test.yml@main
     with:
-      environment: dev
+      stage_environment: dev
     secrets: inherit
   test-staging:
     uses: lsipii/test/.github/workflows/test.yml@main
     with:
-      environment: staging
+      stage_environment: staging
     secrets: inherit

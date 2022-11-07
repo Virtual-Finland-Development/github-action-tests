@@ -2,13 +2,13 @@ name: Test environment values flow on github actions
 on:
   workflow_dispatch:
     inputs:
-      environment:
+      stage_environment:
         description: Environment where to deploy the stack (dev, staging)
         type: environment
         required: true
   workflow_call:
     inputs:
-      environment:
+      stage_environment:
         description: Environment where to deploy the stack (dev, staging)
         type: string
         required: true
@@ -16,7 +16,7 @@ jobs:
   build-and-test:
     name: Build and test
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
+    environment: ${{ inputs.stage_environment }}
     steps:
       - name: Environment test
         run: |
