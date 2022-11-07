@@ -5,11 +5,11 @@ on:
 jobs:
   test-dev:
     uses: lsipii/test/.github/workflows/test.yml@main
-    secrets: inherit
     with:
       environment: dev
+    secrets: inherit
   test-staging:
     uses: lsipii/test/.github/workflows/test.yml@main
-    secrets: inherit
     with:
       environment: staging
+    secrets: inherit
