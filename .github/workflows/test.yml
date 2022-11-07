@@ -7,7 +7,11 @@ on:
         type: environment
         required: true
   workflow_call:
-
+    inputs:
+      environment:
+        description: Environment where to deploy the stack (dev, staging)
+        type: string
+        required: true
 jobs:
   build-and-test:
     name: Build and test
