@@ -13,8 +13,8 @@ on:
         type: string
         required: true
 jobs:
-  build-and-test:
-    name: Build and test
+  test-environment-based-secret:
+    name: Test environment based secret on ${{ inputs.stage_environment }}
     runs-on: ubuntu-latest
     environment: ${{ inputs.stage_environment }}
     steps:
